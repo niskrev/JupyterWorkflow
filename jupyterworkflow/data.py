@@ -31,7 +31,7 @@ def get_fremont_data(filename = 'Fremont.csv', url=FREMONT_URL,
     data = pd.read_csv(filename, index_col = 'Date', parse_dates=False)
 
     try:
-        data.index = pd.to_datetime(data.index, format="%m/%d/%Y %H:%M:%S %p")
+        data.index = pd.to_datetime(data.index, format="%m/%d/%Y %I:%M:%S %p")
     except:
         data.index = pd.to_datetime(data.index)
 
