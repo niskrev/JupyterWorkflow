@@ -28,7 +28,13 @@ def get_fremont_data(filename = 'Fremont.csv', url=FREMONT_URL,
         from urllib.request import urlretrieve
         urlretrieve(url, filename)
 
-    data = pd.read_csv(filename, index_col = 'Date', parse_dates=True)
+    data = pd.read_csv(filename, index_col = 'Date', parse_dates=False)
+
+    try:
+        data.index = pd.to_datetime(data.index, format="%m/%d/%Y %H:%M:%S %p")
+    except:
+        data.index = pd.to_datetime(data.index)
+
     data.columns = ['West', 'East']
     data['Total'] = data['West'] + data['East']
 
