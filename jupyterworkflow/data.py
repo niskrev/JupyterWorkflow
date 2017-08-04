@@ -2,8 +2,6 @@ import os
 from urllib.request import urlretrieve
 import pandas as pd
 
-import matplotlib.pyplot as plt
-plt.style.use('seaborn')
 
 FREMONT_URL = 'https://data.seattle.gov/api/views/65db-xm6k/rows.csv?accessType=DOWNLOAD'
 

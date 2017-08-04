@@ -102,3 +102,7 @@ ENV/
 
 # Data
 Fremont.csv
+
+# ipynb files
+Scratch.ipynb
+
